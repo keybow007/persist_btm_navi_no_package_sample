@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:persist_btm_navi_no_package_sample/screens/fourth_screen.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({Key? key}) : super(key: key);
@@ -13,7 +14,19 @@ class FirstScreen extends StatelessWidget {
       ),
       body: Container(
         color: Colors.blueAccent,
+        child: Center(
+          child: ElevatedButton(
+            onPressed: () => _openFourthScreen(context),
+            child: Text("Fourth Screenへすすむ"),
+          ),
+        ),
       ),
     );
+  }
+
+  _openFourthScreen(BuildContext context) {
+    Navigator.push(context, MaterialPageRoute(
+      builder: (context) => FourthScreen()
+    ));
   }
 }
